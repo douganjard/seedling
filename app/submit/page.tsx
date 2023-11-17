@@ -1,61 +1,73 @@
-// pages/survey.tsx
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { Button, Paper, TextField, Typography } from "@mui/material";
 
 const Survey: React.FC = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [employerName, setEmployerName] = useState<string>("");
+  const [talentPrompt, setTalentPrompt] = useState<string>("");
+
+  const handleInputChange = () => {};
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission logic
+
+    console.log("submit");
+
+    // Redirect to the response view page
+    //router.push("/responses");
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <form
-        className="bg-white p-8 rounded shadow-md w-96"
-        // onSubmit={handleSubmit}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
+    >
+      <Paper
+        elevation={3}
+        sx={{
+          padding: 3,
+          width: "500px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
       >
-        <h2 className="text-2xl font-bold mb-6 text-gray-700">
-          Prompt Submission
-        </h2>
-
-        {/* Employer Name */}
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="employerName"
-          >
-            Employer Name
-          </label>
-          <input
-            className="w-full border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-gray-700"
-            id="employerName"
-            type="text"
-            placeholder="Enter the employer name"
+        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+          <Typography variant="h4" gutterBottom>
+            Prompt Submission
+          </Typography>
+          <TextField
+            label="Employer Name"
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            value={employerName}
+            onChange={(e) => setEmployerName(e.target.value)}
           />
-        </div>
-
-        {/* Talent Prompt */}
-        <div className="mb-6">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="talentPrompt"
-          >
-            Talent Prompt
-          </label>
-          <textarea
-            className="w-full border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-gray-700"
-            id="talentPrompt"
-            placeholder="Type your talent prompt here..."
+          <TextField
+            label="Talent Prompt"
+            variant="outlined"
+            margin="normal"
+            multiline
+            rows={4}
+            fullWidth
+            value={talentPrompt}
+            onChange={(e) => setTalentPrompt(e.target.value)}
           />
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-        >
-          Submit
-        </button>
-      </form>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            sx={{ marginTop: 2 }}
+          >
+            Submit
+          </Button>
+        </form>
+      </Paper>
     </div>
   );
 };
