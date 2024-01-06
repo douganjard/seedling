@@ -11,8 +11,12 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Link from '@mui/material/Link'
-import { TextField } from '@mui/material'
+import TextField from '@mui/material/TextField'
+import Divider from '@mui/material/Divider'
 import Image from 'next/image'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   const [phoneNumber, setPhoneNumber] = React.useState<string>('')
@@ -20,8 +24,8 @@ export default function Home() {
     <main>
       <Box
         sx={{
-          pt: 16,
-          pb: 12,
+          pt: 10,
+          pb: 10,
         }}
       >
         <Container maxWidth="md">
@@ -32,7 +36,8 @@ export default function Home() {
             color="text.primary"
             gutterBottom
           >
-            Plant Your Career Seeds
+            Your dream job is closer <br />
+            than you think.
           </Typography>
           <Typography
             variant="h5"
@@ -43,6 +48,15 @@ export default function Home() {
             Your network is your forest. <br />
             Find humans who want to plant this with you together.
           </Typography>
+          <Typography
+            variant="h4"
+            align="center"
+            color="text.primary"
+            paragraph
+          >
+            <FontAwesomeIcon icon={faLocationDot} className="mr-2" />
+            Based in Kansas City
+          </Typography>
           <Container maxWidth="xs">
             <Stack
               sx={{ pt: 4 }}
@@ -51,7 +65,7 @@ export default function Home() {
               justifyContent="center"
             >
               <Typography variant="h6" gutterBottom align="center">
-                Get started with just your phone number
+                Text us to get started:
               </Typography>
               <TextField
                 label="Phone Number"
@@ -66,16 +80,26 @@ export default function Home() {
                 color="primary"
                 style={{ marginTop: '16px' }}
               >
-                Sign Up
+                Continue
               </Button>
             </Stack>
           </Container>
         </Container>
       </Box>
       <Container sx={{ py: 8 }} maxWidth="md">
-        <Grid container spacing={4} alignItems="center">
+        <Typography
+          component="h3"
+          variant="h3"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          How It Works
+        </Typography>
+        <Grid container spacing={5} alignItems="center">
           <Grid item key={1} xs={12} sm={6} md={4}>
             <Card
+              raised
               sx={{
                 height: '100%',
                 display: 'flex',
@@ -103,19 +127,33 @@ export default function Home() {
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography
                   gutterBottom
-                  variant="h6"
-                  component="h6"
+                  variant="h5"
+                  component="h5"
                   align="center"
                 >
-                  Text us for 30 seconds. <br />
-                  All we need to hear is how we can help, and 2-3 simple yes/no
-                  follow-ups, then we&apos;re good to go.
+                  Map Your Forest
+                </Typography>
+                <Divider
+                  orientation="horizontal"
+                  variant="middle"
+                  flexItem
+                  className="mb-2"
+                />
+                <Typography
+                  gutterBottom
+                  variant="body1"
+                  align="center"
+                  color="text.secondary"
+                >
+                  Bring us into your world, what you are looking for, where we
+                  can help, and we create a plan.
                 </Typography>
               </CardContent>
             </Card>
           </Grid>
           <Grid item key={2} xs={12} sm={6} md={4}>
             <Card
+              raised
               sx={{
                 height: '100%',
                 display: 'flex',
@@ -143,19 +181,34 @@ export default function Home() {
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography
                   gutterBottom
-                  variant="h6"
-                  component="h6"
+                  variant="h5"
+                  component="h5"
                   align="center"
                 >
-                  We get to work. <br />
-                  We parse out what you need, then give you our top options for
-                  local people who can help.
+                  Match with a Guide
+                </Typography>
+                <Divider
+                  orientation="horizontal"
+                  variant="middle"
+                  flexItem
+                  className="mb-2"
+                />
+                <Typography
+                  gutterBottom
+                  variant="body1"
+                  align="center"
+                  color="text.secondary"
+                >
+                  We partner with local experts in KC, vetted professions to be
+                  your career guide. You select your guide, and they get to
+                  work.
                 </Typography>
               </CardContent>
             </Card>
           </Grid>
           <Grid item key={3} xs={12} sm={6} md={4}>
             <Card
+              raised
               sx={{
                 height: '100%',
                 display: 'flex',
@@ -183,13 +236,27 @@ export default function Home() {
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography
                   gutterBottom
-                  variant="h6"
-                  component="h6"
+                  variant="h5"
+                  component="h5"
                   align="center"
                 >
-                  Pick your person! <br />
-                  These people already signed up to help people, time for you to
-                  chose. And then they&apos;ll contact you.
+                  Plant Your Seeds
+                </Typography>
+                <Divider
+                  orientation="horizontal"
+                  variant="middle"
+                  flexItem
+                  className="mb-2"
+                />
+                <Typography
+                  gutterBottom
+                  variant="body1"
+                  align="center"
+                  color="text.secondary"
+                >
+                  Get to work planting your seeds with the help of your guide -
+                  connect with companies & employees, submit applications, and
+                  watch these seeds grow
                 </Typography>
               </CardContent>
             </Card>

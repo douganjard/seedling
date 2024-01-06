@@ -64,7 +64,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <AppBar position="static">
+          <AppBar position="sticky">
             <Toolbar>
               <FontAwesomeIcon icon={faSeedling} />
               <Typography
@@ -122,7 +122,7 @@ export default function RootLayout({
               color="text.secondary"
               component="p"
             >
-              Helping every human find work they love, starting in the middle.
+              Where KC talent advances their career.
             </Typography>
             <Copyright />
           </Box>
